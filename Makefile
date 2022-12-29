@@ -1,5 +1,5 @@
 # Версия docker-compose
-DOCKER_COMPOSE_RELEASE = v2.4.1
+DOCKER_COMPOSE_RELEASE = v2.14.2
 
 all: docker docker-compose
 
@@ -32,7 +32,7 @@ docker:
 	@sudo systemctl enable docker
 	@sudo usermod -aG docker $(USER)
 	@su - $(USER)
-	@sudo chmod 666 /var/run/docker.sock
+	@sudo chmod 660 /var/run/docker.sock
 
 # Установка docker-compose (версию можно изменить в константе в начале файла)
 docker-compose:
